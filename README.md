@@ -6,4 +6,4 @@ to install it just do :
         source venv/bin/activate # on Linux/macOS 
  	venv\Scripts\activate # on Windows
 	pip install -r requirements.txt
-	deativate
+	deactivate
