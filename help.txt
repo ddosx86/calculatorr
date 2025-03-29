@@ -1,0 +1,11 @@
+
+
+bienvenue dans calculatorr 
+les opération:
+	- une soustraction
+	+ une addition
+	/ une division
+	* une multiplication
+	// un modulo
+pour quitter: exit
+
