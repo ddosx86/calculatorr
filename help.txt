@@ -16,7 +16,7 @@ like mult = "*"
 use ans 
 
 it's the major point of this update.
-So if you do a complex calculation you will have a complex answer. 
+explaination,  if you do a complex calculation you will have a complex answer. 
 So if you want to use it after you don't want to retype it.
 So just use ans 
 exemple:
@@ -24,7 +24,7 @@ exemple:
 8/2 = 4.0
 ans/2 = 2.0
 
-
+but never put space between the operator and the number. 
 
 
 for quit : exit
