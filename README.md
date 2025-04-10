@@ -6,6 +6,7 @@ this is a calculator you can use directly in the terminal
 1. Clone this deposit :  
    
   ```` git clone https://github.com/ddosx86/calculatorr.git````
+
 2. go in the project directory:
 
  ```` cd calculatorr ````
