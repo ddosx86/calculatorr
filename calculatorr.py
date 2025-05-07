@@ -19,87 +19,83 @@ with open("help.txt", "r") as file:
 # print banner
 print(Fore.GREEN + logo + Style.RESET_ALL)
 # print the skeleton
-print("Entrez une opération ou 'exit' pour quitter et h pour la liste des commande  ")
+print("Enter an operation or 'exit' to quit and 'h' for help/command list  ")
 while True:
     i = input("calc:</ ") #ask the operation; you can change the prompt here
     # function
-    def add (i):
-        global rep
-        global saveans
-        part = i.split(a)
-        if part[0] == rep:
-            nb1 = saveans
-        else:
-            nb1 = float(part[0])
-        
-        if part[1] == rep:
-            nb2 = saveans
-        else:
-            nb2 = float(part[1])
-        
-        saveans = nb1 + nb2
-        return saveans
     
-    def sous (i):
+    def carry (nb1, nb2, op):
         global rep
         global saveans
-        part = i.split(s)
-        if part[0] == rep:
-            nb1 = saveans
-        else:
-            nb1 = float(part[0])
-        
-        if part[1] == rep:
-            nb2 = saveans
-        else:
-            nb2 = float(part[1])
-        
-        saveans = nb1 - nb2
-        return saveans
-    
-    def prod (i):
-        global rep
-        global saveans
-        part = i.split(mult)
-        if part[0] == rep:
-            nb1 = saveans
-        else:
-            nb1 = float(part[0])
-        
-        if part[1] == rep:
-            nb2 = saveans
-        else:
-            nb2 = float(part[1])
-        
-        saveans = nb1 * nb2
-        return saveans
-    
-    def div (i):
-        global rep
-        global saveans
-        part = i.split(d) 
-        if part[0] == rep: 
-            nb1 = saveans 
-        else: 
-            nb1 = float(part[0])
-        
-        if part [1] == rep:
-            if saveans == 0: 
-                return "la division par zero est imposible" 
-            else: 
-                nb2 = saveans
+        match op:
+            case 1:
+                if nb1 == rep:
+                    nb1 = saveans
+                else:
+                    nb1 = float(nb1)
+                if nb2 == rep:
+                    nb2 = saveans
+                else:
+                    nb2 = float(nb2)
+                saveans = nb1 + nb2
+                return saveans
+            case 2:
+                if nb1 == rep:
+                    nb1 = saveans
+                else:
+                    nb1 = float(nb1)
+                if nb2 == rep:
+                    nb2 = saveans
+                elif nb2 == 0:
+                    saveans = nb1
+                    return saveans
+                else:
+                    nb2 = float(nb2)
+                if nb2 == 0:
+                    saveans = nb1
+                    return saveans
+                else:
+                    saveans = nb1 - nb2
+                    return saveans
+            case 3:
+                if nb1 == rep:
+                    if saveans == 0:
+                        return saveans
+                    else:
+                        nb1 = saveans
+                else:
+                    nb1 = float(nb1)
+                if nb2 == rep:
+                    if saveans == 0:
+                        return saveans
+                    else:
+                        nb2 = saveans
+                else:
+                    nb2 = float(nb2)
+                saveans = nb1 * nb2 
+                return saveans
+            case 4:
+                if nb1 == rep:
+                    nb1 = saveans
+                else:
+                    nb1 = float(nb1)
+                if nb2 == rep:
+                    if saveans == 0:
+                        return "division by zero isn't possible"
+                    elif saveans == 1:
+                        return nb1
+                    else:
+                        nb2 = saveans
+                else:
+                    if nb2 == "0":
+                        return "division by zero isn't possible"
+                    else:
+                        nb2 = float(nb2)
+
                 saveans = nb1 / nb2
                 return saveans
-        else:   
-            nb2 = float(part[1])
-            if nb2 == 0:
-                return "division by zero isn't possible"
-                
-            else: 
-                saveans = nb1 / nb2
-                return saveans
-            
-        
+                        
+
     
     match i:
         # if we want to quit
@@ -112,17 +108,31 @@ while True:
             print(h)
         
         case _ if a in i:
-             print(add(i))
+            part = i.split(a)
+            nb1 = part[0]
+            nb2 = part[1]
+            print(carry(nb1, nb2, 1))
+            
         
         case _ if s in i:
-             print(sous(i))
+            part = i.split(s)
+            nb1 = part[0]
+            nb2 = part[1]
+            print(carry(nb1, nb2, 2))
         
         case _ if mult in i:
-            print(prod(i))
+            part = i.split(mult)
+            nb1 = part[0]
+            nb2 = part[1]
+            print(carry(nb1, nb2, 3))
         
         case _ if d in i:
-            print(div(i))
-        
+            part = i.split(d)
+            nb1 = part[0]
+            nb2 = part[1]
+            print(carry(nb1, nb2, 4))
+        case _:
+            print("unrecognized operation: type h to see help. If necessary modify the operation keys, see the wiki :)")
     
 
     
