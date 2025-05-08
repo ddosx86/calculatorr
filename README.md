@@ -3,7 +3,7 @@ this is a calculator you can use directly in the terminal
 
 
 ## Installation  
-1. Clone this deposit :  
+1. Clone this repository :  
    
   ```` git clone https://github.com/ddosx86/calculatorr.git````
 
