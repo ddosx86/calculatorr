@@ -3,6 +3,7 @@ a = "+" # touch you want to use for addition
 s = "-" # touch you want to use for substraction
 mult = "x" # touch you want to use for multiplication
 d = "/" # touch you want to use for division
+exp = "e"#touch you want to use for exponent
 rep = "ans" # this his the touch for call the result of the previous calculus 
 # sys variable
 saveans = 1
@@ -94,6 +95,24 @@ while True:
 
                 saveans = nb1 / nb2
                 return saveans
+            case 5:
+                if nb1 == 0:
+                    saveans = 0
+                    return saveans
+                if nb1 == 1:
+                    saveans = 1
+                    return saveans
+                if nb2 == 0:
+                    saveans = 1
+                    return saveans
+                if nb2 == 1:
+                    saveans = nb1 
+                    return saveans
+                nb1 = float(nb1)
+                nb2 = float(nb2)
+                saveans = nb1 ** nb2
+                return saveans
+                
                         
 
     
@@ -131,6 +150,11 @@ while True:
             nb1 = part[0]
             nb2 = part[1]
             print(carry(nb1, nb2, 4))
+        case _ if exp in i:
+            part = i.split(exp)
+            nb1 = part[0]
+            nb2 = part[1]
+            print(carry(nb1, nb2, 5))
         case _:
             print("unrecognized operation: type h to see help. If necessary modify the operation keys, see the wiki :)")
     

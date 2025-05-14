@@ -1,14 +1,15 @@
 
 
-welcome to calculator v 1.0 
+welcome to help of calculator v 1.0 
 the operation default keys are:
 	-  substraction
 	+  addition
 	/  division
 	x  multiplication
+	e  powers
 	ans  the new answer key
 
-edit the default keys
+you can edit the default keys
 
 just open the code of this app and edit the variable in the touch description:
 like mult = "*"
