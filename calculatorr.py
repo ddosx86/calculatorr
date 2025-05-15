@@ -116,7 +116,7 @@ while True:
             case 6:
                 number = []
                 i = 1
-                if nb1 = rep:
+                if nb1 == rep:
                     nb1 = saveans
                 else:
                     nb1 = int(nb1)
