@@ -4,6 +4,7 @@ s = "-" # touch you want to use for substraction
 mult = "x" # touch you want to use for multiplication
 d = "/" # touch you want to use for division
 exp = "e"#touch you want to use for exponent
+fact = "!" # touch you want to use for factorial
 rep = "ans" # this his the touch for call the result of the previous calculus 
 # sys variable
 saveans = 1
@@ -112,6 +113,28 @@ while True:
                 nb2 = float(nb2)
                 saveans = nb1 ** nb2
                 return saveans
+            case 6:
+                number = []
+                i = 1
+                if nb1 = rep:
+                    nb1 = saveans
+                else:
+                    nb1 = int(nb1)
+                if nb1>1558:
+                    return"value to big. do not exceed 1558"
+                while i < nb1:
+                    i = i + 1
+                    number.append(i)
+                result = 1
+                for n in number:
+                    result *= n
+                saveans = result 
+                return saveans
+                
+
+                    
+
+
                 
                         
 
@@ -155,6 +178,12 @@ while True:
             nb1 = part[0]
             nb2 = part[1]
             print(carry(nb1, nb2, 5))
+        case _ if fact in i:
+            part = i.split(fact)
+            nb1 = part[0]
+            nb2 = 0
+            print(carry(nb1 ,nb2 ,6))
+
         case _:
             print("unrecognized operation: type h to see help. If necessary modify the operation keys, see the wiki :)")
     

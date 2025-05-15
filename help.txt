@@ -7,6 +7,7 @@ the operation default keys are:
 	/  division
 	x  multiplication
 	e  powers
+	!  factorial
 	ans  the new answer key
 
 you can edit the default keys
