@@ -1,0 +1,24 @@
+#!/bin/bash
+echo "move project file into ~/.local/bin ..."
+mv calculatorr.py ~/.local/bin/calculatorr
+mv requirements.txt ~/.local/bin/requirements.txt
+mv help.txt ~/.local/bin/help.txt
+mv logo.txt ~/.local/bin/logo.txt
+mv README.md ~/.local/bin/README.md
+echo "Done"
+echo "make the venv ..."
+cd ~/.local/bin
+python3 -m venv venv
+echo "Done"
+echo "installing requirements ..."
+source venv/bin/activate
+pip install -r requirements.txt
+deactivate
+echo "Done"
+echo "remove requirements.txt ..."
+rm -f requirements.txt
+echo "Done"
+chmod +x calculatorr
+
+
+

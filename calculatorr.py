@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+import os
 # touch description
 a = "+" # touch you want to use for addition
 s = "-" # touch you want to use for substraction
@@ -8,14 +10,15 @@ fact = "!" # touch you want to use for factorial
 rep = "ans" # this his the touch for call the result of the previous calculus 
 # sys variable
 saveans = 1
-print("Welcome to calculatorr v1.0 ")
+print("Welcome to calculatorr v1.1 ")
 from colorama import Fore, Style
-
+# import the path
+path = os.path.expanduser("~/.local/bin")
 # read the banner file
-with open("logo.txt", "r") as file:
+with open(f"{path}/logo.txt") as file:
         logo = file.read()
 # read the help file
-with open("help.txt", "r") as file:
+with open(f"{path}/help.txt") as file:
             h = file.read()
 
 # print banner
@@ -183,6 +186,8 @@ while True:
             nb1 = part[0]
             nb2 = 0
             print(carry(nb1 ,nb2 ,6))
+        case _ if rep in i:
+            print(saveans)
 
         case _:
             print("unrecognized operation: type h to see help. If necessary modify the operation keys, see the wiki :)")

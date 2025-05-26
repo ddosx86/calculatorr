@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+import os
+loc = os.getcwd()
+print("welcome to the calculatorr installer v0.1 ...")
+q = input("do you have a ~/.local/bin folder ? (y or n)   ")
+if q == "n":
+    print("creating ~/.local/bin ...")
+    os.system("mkdir ~/.local/bin")
+    print("Done")
+q2 = input("do you have ~/.local/bin in your path ? (y or n)   ")
+if q2 == "n":
+    path = input("put your shell access path here :  ")
+    cmd = f"echo 'export PATH=\"$HOME/.local/bin:$PATH\"' >> {path}"
+    print("writing {cmd} in {path} ...  ")
+    os.system(cmd)
+    print("Done")
+print("lunching second script ...")
+os.system("./.install")
+print("installation Done ...")
+print("cleaning ...")
+os.system(f"rm -rf '{loc}'")
+                             

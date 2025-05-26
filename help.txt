@@ -1,6 +1,6 @@
 
 
-welcome to help of calculator v 1.0 
+welcome to help of calculator v 1.1 
 the operation default keys are:
 	-  substraction
 	+  addition
@@ -27,6 +27,8 @@ exemple:
 ans/2 = 2.0
 
 but never put space between the operator and the number. 
+
+you can also know the ans value just by typing ans.
 
 
 for quit : exit
