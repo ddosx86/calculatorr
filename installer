@@ -19,4 +19,5 @@ os.system("./.install")
 print("installation Done ...")
 print("cleaning ...")
 os.system(f"rm -rf '{loc}'")
+o = input("press enter to finish install ...")
                              
