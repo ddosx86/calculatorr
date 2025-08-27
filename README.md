@@ -17,5 +17,5 @@ this is a calculator you can use directly in the terminal
 4. you can now run it anywhere just type:
  ````calculatorr````
 
- in case of proble with the installer check the installation page of the wiki
+ in case of problem with the installer check the installation page of the wiki
 ### thank you to use the calculatorr
