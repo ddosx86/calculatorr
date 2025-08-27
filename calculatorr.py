@@ -26,7 +26,8 @@ print(Fore.GREEN + logo + Style.RESET_ALL)
 # print the skeleton
 print("Enter an operation or 'exit' to quit and 'h' for help/command list  ")
 while True:
-    i = input("calc:</ ") #ask the operation; you can change the prompt here
+    i = input("calc:</ ").strip() #ask the operation; you can change the prompt here
+    i = "".join(i.split())
     # function
     
     def carry (nb1, nb2, op):
@@ -34,6 +35,8 @@ while True:
         global saveans
         match op:
             case 1:
+                nb1 = nb1.strip()
+                nb2 = nb2.strip()
                 if nb1 == rep:
                     nb1 = saveans
                 else:
@@ -45,6 +48,8 @@ while True:
                 saveans = nb1 + nb2
                 return saveans
             case 2:
+                nb1 = nb1.strip()
+                nb2 = nb2.strip()
                 if nb1 == rep:
                     nb1 = saveans
                 else:
@@ -63,6 +68,8 @@ while True:
                     saveans = nb1 - nb2
                     return saveans
             case 3:
+                nb1 = nb1.strip()
+                nb2 = nb2.strip()
                 if nb1 == rep:
                     if saveans == 0:
                         return saveans
@@ -80,6 +87,8 @@ while True:
                 saveans = nb1 * nb2 
                 return saveans
             case 4:
+                nb1 = nb1.strip()
+                nb2 = nb2.strip()
                 if nb1 == rep:
                     nb1 = saveans
                 else:
@@ -100,6 +109,8 @@ while True:
                 saveans = nb1 / nb2
                 return saveans
             case 5:
+                nb1 = nb1.strip()
+                nb2 = nb2.strip()
                 if nb1 == 0:
                     saveans = 0
                     return saveans
@@ -117,6 +128,7 @@ while True:
                 saveans = nb1 ** nb2
                 return saveans
             case 6:
+                nb1 = nb1.strip()
                 number = []
                 i = 1
                 if nb1 == rep:
@@ -188,7 +200,7 @@ while True:
             print(carry(nb1 ,nb2 ,6))
         case _ if rep in i:
             print(saveans)
-
+        
         case _:
             print("unrecognized operation: type h to see help. If necessary modify the operation keys, see the wiki :)")
     
